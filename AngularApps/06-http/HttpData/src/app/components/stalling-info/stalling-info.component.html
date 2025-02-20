@@ -1,0 +1,21 @@
+@if (stalling) {
+  <p>
+    <label>Type</label>
+    <span>{{ stalling.type_stalling }}</span>
+  </p>
+  <p>
+    <label>Naam</label>
+    <span>{{ stalling.naam_fietsenstalling }}</span>
+  </p>
+  <p>Openingstijden</p>
+  <ul>
+    <li><span class="weekday">maandag</span><span> {{ stalling.openingstijden_maandag }}</span></li>
+    <li><span class="weekday">dinsdag</span><span> {{ stalling.openingstijden_dinsdag }}</span></li>
+    <li><span class="weekday">woensdag</span><span> {{ stalling.openingstijden_woensdag }}</span></li>
+    <li><span class="weekday">donderdag</span><span> {{ stalling.openingstijds_donderdag }}</span></li>
+    <li><span class="weekday">vrijdag</span><span> {{ stalling.openingstijden_vrijdag }}</span></li>
+    <li><span class="weekday">zaterdag</span><span> {{ stalling.openingstijden_zaterdag }}</span></li>
+    <li><span class="weekday">zondag</span><span> {{ stalling.openingstijden_zondag }}</span></li>
+  </ul>
+
+}

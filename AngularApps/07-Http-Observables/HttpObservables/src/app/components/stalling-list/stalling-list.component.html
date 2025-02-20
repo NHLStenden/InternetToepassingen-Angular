@@ -1,0 +1,20 @@
+<main>
+  <article>
+    <header>
+      <h1>Getting data through async HTTP-calls</h1>
+    </header>
+    <section>
+      <p>{{(dataService.stallingen$ | async)?.total_count}} stallingen gevonden</p>
+      <table>
+        <tbody>
+        @for(stalling of (dataService.stallingen$ | async)?.results; track stalling.objectid){
+          <tr stalling-table-row [stalling]="stalling"></tr>
+        }
+        @empty{
+          <tr><td>Nog geen informatie beschikbaar<span class="blink">.....</span></td></tr>
+        }
+        </tbody>
+      </table>
+    </section>
+  </article>
+</main>
