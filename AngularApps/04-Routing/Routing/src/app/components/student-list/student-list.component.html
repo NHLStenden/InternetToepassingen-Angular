@@ -1,0 +1,14 @@
+<main>
+  <article>
+    <header>
+      <h1>Data Driven</h1>
+    </header>
+    <section>
+      <ul>
+        @for(student of dataService.students; track student.id){
+          <li class="clickable" [routerLink]="['student', student.id]">{{student.firstName}} {{student.lastName}}</li>
+        }
+      </ul>
+    </section>
+  </article>
+</main>
