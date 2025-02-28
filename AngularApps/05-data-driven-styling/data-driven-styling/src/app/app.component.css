@@ -1,0 +1,11 @@
+.student {
+  padding:10px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.selected {
+  background-color: green;
+  color: white;
+}

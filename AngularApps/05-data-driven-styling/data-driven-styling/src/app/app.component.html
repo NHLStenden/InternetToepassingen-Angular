@@ -1,0 +1,15 @@
+<main>
+    <article>
+        <header>
+            <h1>Data Driven Styling</h1>
+        </header>
+        <section>
+            @for (student of students; track student.email) {
+                <div class="student" [class.selected]="student === selectedStudent">
+                    <student-info [student]="student" (click)="handleClickStudent(student)"></student-info>
+                    <hr>
+                </div>
+            }
+        </section>
+    </article>
+</main>
