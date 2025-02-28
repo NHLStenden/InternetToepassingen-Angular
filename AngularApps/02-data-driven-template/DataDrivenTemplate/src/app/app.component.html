@@ -16,6 +16,22 @@
         <label>e-mail</label>
         <a [href]="studentEmail">{{studentEmail}}</a>
       </p>
+      <p>
+        <label>e-mail</label>
+        <a [href]="'mailto:' + studentEmail">{{studentEmail}}</a>
+      </p>
+      <p>
+        <label>Geboren</label>
+        <span>{{geboorteDatum | date:'EEEE dd MMMM YYYY':'GMT+1'}}</span>
+      </p>
+      <p>
+        <label>Leeftijd</label>
+        <span>{{ leeftijd | number:'2.0-0'}} jaar</span>
+      </p>
+      <p>
+        <label>Leeftijd</label>
+        <span>{{ geboorteDatum | age | number:'2.0-0'}} jaar</span>
+      </p>
     </section>
   </article>
 </main>
