@@ -1,0 +1,21 @@
+main {
+  font-family: sans-serif;
+  & section {
+    & header {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      background-color: rgb(200,200,200);
+      padding:4px;
+
+      & .icon {
+        font-size: 2em;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}
