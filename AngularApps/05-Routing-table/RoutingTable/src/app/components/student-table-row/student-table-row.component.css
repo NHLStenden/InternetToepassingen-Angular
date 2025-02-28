@@ -1,7 +1,0 @@
-td:first-of-type {
-  cursor:pointer;
-}
-
-td:first-of-type:hover {
-  background-color:#eee;
-}

@@ -1,8 +1,0 @@
-label {
-  display: inline-block;
-  width:10em;
-}
-
-label:after {
-  content: ':';
-}
