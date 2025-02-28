@@ -1,0 +1,17 @@
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  display: inline-block;
+  width:10em;
+}
+
+label:after {
+  content: ':';
+}
+
+.clickable:hover {
+  cursor: pointer;
+  background-color: rgb(204, 204, 204);
+}

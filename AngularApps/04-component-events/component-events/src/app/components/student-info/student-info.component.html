@@ -1,0 +1,20 @@
+@if (student) {
+  <div class="container">
+    <p>
+      <label>Studentnaam</label>
+      <span class="clickable" (click)="handleStudentNameClicked($event)">{{ student.firstName }}</span>
+    </p>
+    <p>
+      <label>Achternaam</label>
+      <span>{{ student.lastName }}</span>
+    </p>
+    <p>
+      <label>Telefoon</label>
+      <span>{{ student.phone }}</span>
+    </p>
+    <p>
+      <label>e-mail</label>
+      <a [href]="'mailto:' + student.email">{{ student.email }}</a>
+    </p>
+  </div>
+}
