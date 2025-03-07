@@ -1,0 +1,17 @@
+<section>
+  <p>Fibonacci({{ counter() }}) = {{ fibonacciCalculator()  | number:'.0-0' +
+  ''}}</p>
+  <p>Aantal updates: {{ nrOfUpdates }}</p>
+  <button (click)="decreaseCounter()">-</button>
+  <button (click)="increaseCounter()">+</button>
+</section>
+<section>
+  <header>
+    <h2>History</h2>
+  </header>
+  <ul class="height25pc scroller">
+    @for (item of history; track item) {
+      <li>{{ item }}</li>
+    }
+  </ul>
+</section>
