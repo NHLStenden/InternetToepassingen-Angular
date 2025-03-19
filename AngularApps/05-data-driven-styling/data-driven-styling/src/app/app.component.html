@@ -3,6 +3,11 @@
         <header>
             <h1>Data Driven Styling</h1>
         </header>
+      <section>
+        @if(selectedStudent) {
+          <button>Edit</button>
+        }
+      </section>
         <section>
             @for (student of students; track student.email) {
                 <div class="student" [class.selected]="student === selectedStudent">
