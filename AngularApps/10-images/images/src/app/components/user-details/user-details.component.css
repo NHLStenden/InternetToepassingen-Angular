@@ -1,0 +1,17 @@
+section {
+  font-family:sans-serif;
+  border:1px darkgray solid;
+  margin:10px;
+  padding:10px;
+  border-radius: 10px;
+  box-shadow: #cccccc 3px 3px 3px;
+}
+
+label {
+  display: inline-block;
+  width: 6em;
+}
+
+label {
+  margin-bottom: 10px;
+}

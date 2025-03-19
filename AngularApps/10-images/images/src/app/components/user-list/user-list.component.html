@@ -1,0 +1,30 @@
+@if(data.allUsers && data.allUsers.length > 0 ){
+  <table>
+  <thead>
+  <tr>
+    <th>&nbsp;</th>
+    <th>User</th>
+    <th>Name</th>
+
+  </tr>
+  </thead>
+  <tbody>
+     @for(user of data.allUsers; track user.username){
+       <tr [routerLink]="['user', 'details', user.username]">
+         <td><img class="avatar" src="{{user.avatar | createAvatarSourceURL}}"/></td>
+         <td>{{user.username}}</td>
+         <td>{{user.name}}</td>
+       </tr>
+     }
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Totaal</td>
+      <td colspan="2">{{data.allUsers.length}} gebruikers</td>
+    </tr>
+  </tfoot>
+</table>
+}
+@else {
+  <h1 class="error">Nog geen gegevens!</h1>
+}
