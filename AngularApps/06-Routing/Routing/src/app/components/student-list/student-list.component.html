@@ -6,7 +6,9 @@
     <section>
       <ul>
         @for(student of dataService.students; track student.id){
-          <li class="clickable" [routerLink]="['student', student.id]">{{student.firstName}} {{student.lastName}}</li>
+          <li class="clickable"
+              [routerLink]="['student', student.id]">
+            {{student.firstName}} {{student.lastName}}</li>
         }
       </ul>
     </section>
