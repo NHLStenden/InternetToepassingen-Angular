@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StudentInfoComponent} from './components/student-info/student-info.component';
 import {Student} from './classes/student';
 
@@ -6,13 +6,22 @@ import {Student} from './classes/student';
   selector: 'app-root',
   imports: [StudentInfoComponent],
   templateUrl: './app.component.html',
+  standalone: true,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'DataDrivenComponent';
-  student: Student;
+  student: Student | undefined;
 
   constructor() {
-    this.student= new Student('Martin', 'Molema', '06-12345678', 'martin.molema@nhlstenden.com')
+
+  }
+
+  ngOnInit(): void {
+    window.setTimeout(()=>{
+      this.student= new Student('Martin', 'Molema', '06-12345678', 'martin.molema@nhlstenden.com')
+    },10000);
+
+
   }
 }

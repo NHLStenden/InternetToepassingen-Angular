@@ -5,9 +5,9 @@ import {AgePipe} from './pipes/age.pipe';
 @Component({
   selector: 'app-root',
   imports: [
-    DatePipe,
     DecimalPipe,
-    AgePipe
+    AgePipe,
+    DatePipe
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

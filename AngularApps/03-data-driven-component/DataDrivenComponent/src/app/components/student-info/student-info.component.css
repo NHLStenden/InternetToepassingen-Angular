@@ -1,8 +1,17 @@
+label, span {
+  font-size: 1.1rem;
+}
+
+
 label {
   display: inline-block;
-  width:10em;
+  width:10rem;
 }
 
 label:after {
   content: ':';
+}
+
+.isSelected {
+  background-color: lightgray;
 }
