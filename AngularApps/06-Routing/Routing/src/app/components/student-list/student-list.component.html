@@ -7,7 +7,7 @@
       <ul>
         @for(student of dataService.students; track student.id){
           <li class="clickable"
-              [routerLink]="['/','students', student.id]">
+              [routerLink]="getRouteToStudentDetails(student.id)">
             {{student.firstName}} {{student.lastName}}</li>
         }
       </ul>

@@ -23,12 +23,14 @@ export class StallingListComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.getFietsenstallingen().subscribe({
-      next: data => {
+      next: (data :StallingData) => {
         this.stalling = data;
+        console.log(`stap 2`);
       },
       error: (err: HttpErrorResponse) => {
         alert(err.message);
       }
-    })
+    });
+    console.log(`stap 1`);
   }
 }

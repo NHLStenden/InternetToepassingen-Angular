@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {StudentDataService} from '../../services/student-data.service';
 import {RouterLink} from '@angular/router';
+import {getRouteToStudentDetails} from '../../helpers/RouteSupport';
 
 @Component({
   selector: 'student-list',
@@ -15,4 +16,6 @@ export class StudentListComponent {
   constructor(public dataService: StudentDataService) {
 
   }
+
+  protected readonly getRouteToStudentDetails = getRouteToStudentDetails;
 }

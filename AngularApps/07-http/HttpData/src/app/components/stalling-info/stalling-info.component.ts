@@ -14,14 +14,20 @@ import {StallingDetailsApiResult} from '../../services/stalling-details-api.resu
 })
 export class StallingInfoComponent implements OnInit {
   stalling: StallingDetails | undefined = undefined;
+  protected idStalling: number | undefined = undefined;
 
   constructor(private route: ActivatedRoute,
               private http: HttpRestApiService) {
-    /** Haal id uit de route en converteer naar een number */
-    const id = parseInt(this.route.snapshot.params['id']);
+  }
 
+  ngOnInit(): void {
+    /** Haal id uit de route en converteer naar een number */
+    this.idStalling = parseInt(this.route.snapshot.params['id']);
     /** roep de webservice aan */
-    this.http.getOneFietsenstalling(id).subscribe({
+    if (! this.idStalling) {
+      return ;
+    }
+    this.http.getOneFietsenstalling(this.idStalling).subscribe({
       next: (stalling: StallingDetailsApiResult) => {
 
         /** Als het aantal antwoorden precies 1 is hebben we een resultaat */
@@ -34,9 +40,6 @@ export class StallingInfoComponent implements OnInit {
       }
     });
     console.log(this.stalling);
-  }
-
-  ngOnInit(): void {
   }
 
 }

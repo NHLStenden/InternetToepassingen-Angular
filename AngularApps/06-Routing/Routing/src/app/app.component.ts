@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
+import {getRouteToHomepage} from './helpers/RouteSupport';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,5 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 })
 export class AppComponent {
   title = 'Routing - Studenten';
+  protected readonly getRouteToHomepage = getRouteToHomepage;
 }
