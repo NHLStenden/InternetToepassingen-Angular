@@ -1,6 +1,11 @@
 import {Component, computed, effect, Signal, signal, WritableSignal} from '@angular/core';
 import {DecimalPipe} from '@angular/common';
 
+interface HistoryItem {
+  base: number;
+  result: number;
+}
+
 @Component({
   selector: 'app-fibonacci-calculator',
   imports: [
@@ -13,18 +18,17 @@ export class FibonacciCalculatorComponent {
 
   counter: WritableSignal<number> = signal(0);
   fibonacciCalculator: Signal<number> = signal(0);
-  nrOfUpdates: number = 0;
-  history: string[] = [];
+  history: HistoryItem[] = [];
 
   constructor() {
     effect(() => {
-      this.history.push(`${this.counter()} = ${this.fibonacciCalculator()} `);
+      this.history.push({base: this.counter() , result: this.fibonacciCalculator()});
     });
     this.fibonacciCalculator = computed(() => this.fib(this.counter()));
   }
 
   fib(nr: number) : number {
-    if (nr == 0) {
+    if (nr <= 0) {
       return 0;
     }
     if (nr == 1) {
