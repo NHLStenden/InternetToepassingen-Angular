@@ -17,32 +17,39 @@ interface HistoryItem {
 export class FibonacciCalculatorComponent {
 
   counter: WritableSignal<number> = signal(0);
-  fibonacciCalculator: Signal<number> = signal(0);
+  fibonacciCalculator: Signal<number>;
   history: HistoryItem[] = [];
 
   constructor() {
     effect(() => {
-      this.history.push({base: this.counter() , result: this.fibonacciCalculator()});
+      this.history.push({base: this.counter(), result: this.fibonacciCalculator()});
     });
-    this.fibonacciCalculator = computed(() => this.fib(this.counter()));
+    this.fibonacciCalculator = computed(() => {
+      return this.fib(this.counter())
+    });
   }
 
-  fib(nr: number) : number {
+  fib(nr: number): number {
     if (nr <= 0) {
       return 0;
     }
     if (nr == 1) {
       return 1;
     }
-    return this.fib(nr - 1) + this.fib(nr -2);
+    return this.fib(nr - 1) + this.fib(nr - 2);
   }
 
   increaseCounter() {
-    this.counter.update(x => x + 1);
+    this.counter.update((x: number) => {
+      return x + 1;
+    });
   }
 
   decreaseCounter() {
     this.counter.update(x => x - 1);
   }
 
+  protected random() {
+    this.counter.update(x => Math.trunc(Math.random() * 10));
+  }
 }
